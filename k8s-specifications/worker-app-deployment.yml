@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   name: worker-app-deployment
   labels:
-    app: demo-voting-app
+    app: voting-app
 spec:
   replicas: 3
   selector:
     matchLabels:
       name: worker-app-pod
-      app: demo-voting-app
+      app: voting-app
   template:
     metadata:
       name: worker-app-pod
       labels:
         name: worker-app-pod
-        app: demo-voting-app
+        app: voting-app
 
     spec:
       containers:
       - name: worker-app
-        image: dockersamples/examplevotingapp_worker
+        image: glorious3000/worker
